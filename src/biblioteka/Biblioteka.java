@@ -2,10 +2,18 @@ package biblioteka;
 
 import java.util.LinkedList;
 
+/**
+ * Ova klasa implementira interfejs
+ * @author Radosavljevic Tamara
+ */
+
 import biblioteka.interfejs.BibliotekaInterface;
 
 public class Biblioteka implements BibliotekaInterface {
 
+	/**
+	 * Lista sa svim knjigama u biblioteci
+	 */
 	private LinkedList<Knjiga> knjige = new LinkedList<Knjiga>();
 	
 	@Override

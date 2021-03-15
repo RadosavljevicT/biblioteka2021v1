@@ -1,0 +1,108 @@
+package biblioteka;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+
+class AutorTest {
+
+	Autor a;
+	@BeforeEach
+	void setUp() throws Exception {
+		a = new Autor ();
+	}
+
+	@AfterEach
+	void tearDown() throws Exception {
+		a=null;
+	}
+
+	@Test
+	void testAutor() {
+		a = new Autor();
+		
+		assertNotNull(a);
+	}
+
+	@Test
+	void testSetIme() {
+	
+		a.setIme("Pera");
+		assertEquals("Pera", a.getIme);
+	}
+	@Test
+	@DisplayName ("Testira ako je uneto null umesto imena")
+	void testSetImeNull () {
+		
+		asserThrows(java.lang.NullPointerException.class, () -> a.setIme(null));
+		
+	}
+	@Test
+	
+	void testSetImeKratakString () {
+	
+		asserThrows(java.lang.RuntimeException.class, () -> a.setIme("P"));
+		
+	}
+	@Test
+	
+	void testSetPrezime() {
+		
+		a.setPrezime ("Peric");
+		
+		assertEquals("Peric", a.getPrezime());
+	}
+	
+@Test
+	
+	void testSetPrezimeNull() {
+		
+	asserThrows(java.lang.NullPointerException.class, () -> a.setPrezime(null));
+	}
+
+	@Test
+	void testToString() {
+		
+		a.setIme("Zika");
+		a.setPrezime("Zikic");
+		
+		String s = a.toString();
+		
+		assertTrue(s.contains("Zika"));
+		assertTrue(s.contains("Zikic"));
+		
+	}
+@Test
+	
+	void testSetPrezimeKratakString () {
+	
+		asserThrows(java.lang.RuntimeException.class, () -> a.setPrezime("P"));
+		
+	}
+
+@ParameterizedTest
+@CsvSource({
+	
+	"Pera, Peric, Pera, Peric, true",
+	"Pera, Zikic, Pera, Peric, false",
+	"Mika, Peric, Pera, Peric, false",
+	"Pera, Peric, Mika, Mikic, true"
+})
+void testEqualsObject (String ime1, String ime2, String prezime1, String prezime2, boolean eq) {
+	
+a.setIme(ime1);
+a.setPrezime(prezime1);
+
+Autor b = new Autor();
+b.setIme(ime2);
+b.setPrezime(prezime2);
+
+assertEquals(eq, a.equals(b));
+	
+}
+
+}

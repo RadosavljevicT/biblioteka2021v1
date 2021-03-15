@@ -5,16 +5,31 @@ public class Autor {
 	private String ime;
 	private String prezime;
 	
+	public Autor () {
+		
+		super();
+	}
 	public String getIme() {
 		return ime;
 	}
 	public void setIme(String ime) {
+		
+		if (ime == null)
+			throw new NullPointerException ("Ime ne sme biti null");
+		if (ime.length()< 2)
+			throw new RuntimeException ("Ime ne moze imati manje od 2 karaktera");
+		
 		this.ime = ime;
 	}
 	public String getPrezime() {
 		return prezime;
 	}
 	public void setPrezime(String prezime) {
+		if (prezime == null)
+			throw new NullPointerException ("Prezime ne sme biti null");
+		if (prezime.length()< 2)
+			throw new RuntimeException ("Prezime ne moze imati manje od 2 karaktera");
+		
 		this.prezime = prezime;
 	}
 	

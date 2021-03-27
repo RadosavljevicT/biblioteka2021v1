@@ -7,6 +7,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 class AutorTest {
 
@@ -32,20 +33,20 @@ class AutorTest {
 	void testSetIme() {
 	
 		a.setIme("Pera");
-		assertEquals("Pera", a.getIme);
+		assertEquals("Pera", a.getIme());
 	}
 	@Test
 	@DisplayName ("Testira ako je uneto null umesto imena")
 	void testSetImeNull () {
 		
-		asserThrows(java.lang.NullPointerException.class, () -> a.setIme(null));
+		assertThrows(java.lang.NullPointerException.class, () -> a.setIme(null));
 		
 	}
 	@Test
 	
 	void testSetImeKratakString () {
 	
-		asserThrows(java.lang.RuntimeException.class, () -> a.setIme("P"));
+		assertThrows(java.lang.RuntimeException.class, () -> a.setIme("P"));
 		
 	}
 	@Test
@@ -61,7 +62,7 @@ class AutorTest {
 	
 	void testSetPrezimeNull() {
 		
-	asserThrows(java.lang.NullPointerException.class, () -> a.setPrezime(null));
+	assertThrows(java.lang.NullPointerException.class, () -> a.setPrezime(null));
 	}
 
 	@Test
@@ -80,7 +81,7 @@ class AutorTest {
 	
 	void testSetPrezimeKratakString () {
 	
-		asserThrows(java.lang.RuntimeException.class, () -> a.setPrezime("P"));
+		assertThrows(java.lang.RuntimeException.class, () -> a.setPrezime("P"));
 		
 	}
 
@@ -92,7 +93,7 @@ class AutorTest {
 	"Mika, Peric, Pera, Peric, false",
 	"Pera, Peric, Mika, Mikic, true"
 })
-void testEqualsObject (String ime1, String ime2, String prezime1, String prezime2, boolean eq) {
+void testEqualsObject (String ime1, String prezime1, String ime2, String prezime2, boolean eq) {
 	
 a.setIme(ime1);
 a.setPrezime(prezime1);

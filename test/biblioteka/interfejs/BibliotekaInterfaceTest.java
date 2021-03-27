@@ -2,6 +2,7 @@ package biblioteka.interfejs;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
@@ -37,7 +38,7 @@ public abstract class BibliotekaInterfaceTest {
 		k.setIsbn("12345");
 		
 		Knjiga k2 = new Knjiga();
-		k.setIsbn("12345");
+		k2.setIsbn("12345");
 		
 		RuntimeException e = assertThrows(java.lang.RuntimeException.class, () -> biblioteka.dodajKnjigu(k2));
 		assertEquals("Knjiga vec postoji", e.getMessage());

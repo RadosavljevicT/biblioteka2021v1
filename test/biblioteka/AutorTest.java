@@ -93,7 +93,7 @@ class AutorTest {
 	"Mika, Peric, Pera, Peric, false",
 	"Pera, Peric, Mika, Mikic, true"
 })
-void testEqualsObject (String ime1, String ime2, String prezime1, String prezime2, boolean eq) {
+void testEqualsObject (String ime1, String prezime1, String ime2, String prezime2, boolean eq) {
 	
 a.setIme(ime1);
 a.setPrezime(prezime1);

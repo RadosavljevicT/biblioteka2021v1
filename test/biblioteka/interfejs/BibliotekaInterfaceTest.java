@@ -36,6 +36,7 @@ public abstract class BibliotekaInterfaceTest {
 		Knjiga k = new Knjiga();
 		k.setIsbn("12345");
 		
+		biblioteka.dodajKnjigu(k);
 		Knjiga k2 = new Knjiga();
 		k2.setIsbn("12345");
 		

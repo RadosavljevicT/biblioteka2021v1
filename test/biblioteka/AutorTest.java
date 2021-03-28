@@ -91,7 +91,7 @@ class AutorTest {
 	"Pera, Peric, Pera, Peric, true",
 	"Pera, Zikic, Pera, Peric, false",
 	"Mika, Peric, Pera, Peric, false",
-	"Pera, Peric, Mika, Mikic, true"
+	"Pera, Peric, Mika, Mikic, false"
 })
 void testEqualsObject (String ime1, String prezime1, String ime2, String prezime2, boolean eq) {
 	
